@@ -19,7 +19,7 @@
     /* General Text */
     --text-light: #FFFFFF;
     /* Text on Dark Backgrounds */
-    font-family: 'Dancing Script', 'Pacifico', 'Great Vibes', cursive;
+    --font-family: 'Dancing Script', 'Pacifico', 'Great Vibes', cursive;
     --container-width: 1100px;
 }
 
@@ -234,8 +234,16 @@ body {
     margin-top: 20px;
     color: var(--secondary-accent);
 }
+
+.content-area:last-of-type {
+    border-bottom: none !important;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    /* Remove bottom border and spacing for last section */
+}
+
 .content-area:last-of-type::after {
-    content: "";
+    content: none;
     /* Remove moon phases after last section */
 }
 
@@ -319,6 +327,52 @@ body {
     color: var(--secondary-accent);
     margin-bottom: 1.5rem;
 }
+
+
+/* Blog List Layout */
+.blog-list {
+    display: grid;
+    gap: 30px;
+    margin: 3rem 0;
+}
+
+/* Blog Cards */
+.blog-card {
+    background: var(--card-bg);
+    padding: 30px 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    text-align: left;
+}
+
+.blog-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
+
+.blog-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.blog-card p {
+    margin-bottom: 15px;
+    color: var(--text-main);
+}
+
+.read-more {
+    color: var(--accent-color);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.read-more:hover {
+    color: var(--secondary-accent);
+    text-decoration: underline;
+}
+
+
 
 
 /* 7. MEDIA QUERIES (The Responsive Magic) */
