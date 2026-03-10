@@ -187,6 +187,13 @@ body {
     text-align: center;
 }
 
+.content-area ul {
+    max-width: 600px;   /* keeps the list narrow */
+    margin: 0 auto;     /* centers it */
+    padding-left: 1.2rem; /* keeps bullets aligned nicely */
+}
+
+
 /* Section Divider with Moon Phases */
 .content-area::after {
     content: "🌕 🌖 🌗 🌘 🌑 🌒 🌓 🌔";
