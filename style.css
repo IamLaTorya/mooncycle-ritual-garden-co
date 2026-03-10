@@ -1,11 +1,25 @@
 /* 1. CSS Variables - The "Theme" Controller */
+
 :root {
-    --primary-color: #2c3e50;    /* Navbar & Footer */
-    --accent-color: #e74c3c;     /* Buttons & Highlights */
-    --bg-light: #f4f7f6;         /* Page Background */
-    --card-bg: #ffffff;          /* Card Background */
-    --text-main: #333333;        /* General Text */
-    --text-light: #ffffff;       /* Text on Dark Backgrounds */
+    --primary-color: #2F4F46;
+    /* Deep Herbal Green – Navbar & Footer */
+    --accent-color: #C8A96A;
+    /* Moonlight Gold – Buttons & Highlights */
+    --secondary-accent: #B8A6C9;
+    /* Dusty Lavender – Hover effects / subtle accents */
+
+    --bg-light: #F6F1E9;
+    /* Warm Cream – Page Background */
+    --section-bg: #8FA89A;
+    /* Dusty Sage – Section backgrounds */
+
+    --card-bg: #FFFFFF;
+    /* Card Background */
+    --text-main: #2F3A34;
+    /* General Text */
+    --text-light: #FFFFFF;
+    /* Text on Dark Backgrounds */
+    font-family: 'Dancing Script', 'Pacifico', 'Great Vibes', cursive;
     --container-width: 1100px;
 }
 
@@ -17,7 +31,7 @@
 }
 
 body {
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-family: var(--font-family);
     line-height: 1.6;
     background-color: var(--bg-light);
     color: var(--text-main);
@@ -37,7 +51,7 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .nav-links {
@@ -45,7 +59,9 @@ body {
     display: flex;
 }
 
-.nav-links li { margin-left: 20px; }
+.nav-links li {
+    margin-left: 20px;
+}
 
 .nav-links a {
     color: #bdc3c7;
@@ -54,14 +70,19 @@ body {
     transition: color 0.3s ease;
 }
 
-.nav-links a:hover, .nav-links a.active {
+.nav-links a:hover,
+.nav-links a.active {
     color: var(--text-light);
 }
 
 /* 4. Hero Section */
 .hero {
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=80');
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url("https://images.stockcake.com/public/0/a/0/0a002cfc-9ba7-4bd1-9af5-f2eedf74f956_large/ancient-healing-remedies-stockcake.jpg") no-repeat;
+
+
+
     background-size: cover;
     background-position: center;
     height: 60vh;
@@ -74,7 +95,8 @@ body {
 }
 
 .hero-content h1 {
-    font-size: clamp(2rem, 5vw, 3.5rem); /* Responsive font size */
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    /* Responsive font size */
     margin-bottom: 15px;
 }
 
@@ -91,6 +113,7 @@ body {
 
 .cta-button:hover {
     transform: scale(1.05);
+    background: var(--secondary-accent);
 }
 
 /* 5. Main Layout & Cards */
@@ -104,16 +127,18 @@ body {
 
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 columns on desktop */
     gap: 30px;
-    margin-top: -100px; /* Overlap effect */
+    margin-top: -100px;
+    /* Overlap effect */
 }
 
 .card {
     background: var(--card-bg);
     padding: 40px 25px;
     border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     text-align: center;
     transition: translateY 0.3s ease;
 }
@@ -131,20 +156,67 @@ body {
     margin-top: 50px;
 }
 
+.botanical-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 1px solid #c9c2a3;
+    /* dried herb color */
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+}
+
+.botanical-text {
+    font-family: var(--font-family);
+    font-size: 2rem;
+    letter-spacing: 1px;
+    color: #4a4a3f;
+    /* earthy botanical tone */
+    text-shadow: 0 0 6px rgba(255,255,255,0.4);
+    transform: rotate(-1deg);
+}
+
+/*Content Section*/
+.content-area{
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #c9c2a3;
+    text-align: center;
+}
+
+/* Section Divider with Moon Phases */
+.content-area::after {
+    content: "🌕 🌖 🌗 🌘 🌑 🌒 🌓 🌔";
+    display: block;
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 20px;
+    color: var(--secondary-accent);
+}
+.content-area:last-of-type::after {
+    content: "";
+    /* Remove moon phases after last section */
+}
+
 /* 7. MEDIA QUERIES (The Responsive Magic) */
 
 /* Tablet & Smaller Screens */
 @media (max-width: 992px) {
     .card-grid {
-        grid-template-columns: repeat(2, 1fr); /* Drop to 2 columns */
-        margin-top: 20px; /* Remove overlap for cleaner mobile feel */
+        grid-template-columns: repeat(2, 1fr);
+        /* Drop to 2 columns */
+        margin-top: 20px;
+        /* Remove overlap for cleaner mobile feel */
     }
 }
 
 /* Mobile Phones */
 @media (max-width: 600px) {
     .navbar {
-        flex-direction: column; /* Stack logo and links */
+        flex-direction: column;
+        /* Stack logo and links */
         gap: 10px;
     }
 
@@ -153,7 +225,8 @@ body {
     }
 
     .card-grid {
-        grid-template-columns: 1fr; /* 1 column on small phones */
+        grid-template-columns: 1fr;
+        /* 1 column on small phones */
     }
 
     .hero {
