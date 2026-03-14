@@ -1,5 +1,5 @@
 /* 1. Color Variables - The "Theme" Controller */
-
+/* Using CSS variables for easy theme management and consistency across the site */
 :root {
     --primary-color: #2F4F46;
     /* Deep Herbal Green – Navbar & Footer */
@@ -29,7 +29,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+/* Base font and background for the entire site */
 body {
     font-family: var(--font-family);
     line-height: 1.6;
@@ -53,23 +53,26 @@ body {
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-
+/* Logo Styling */
 .nav-links {
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
 }
-
+/* Spacing between nav links for better readability */
 .nav-links li {
     margin-left: 20px;
 }
-
+/* Nav links styling with a smooth color transition for hover effects */
 .nav-links a {
     color: #bdc3c7;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
 }
-
+/* Highlight the active page link and add a hover effect for better user experience */
 .nav-links a:hover,
 .nav-links a.active {
     color: var(--text-light);
@@ -81,8 +84,7 @@ body {
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
         url("https://images.stockcake.com/public/0/a/0/0a002cfc-9ba7-4bd1-9af5-f2eedf74f956_large/ancient-healing-remedies-stockcake.jpg") no-repeat;
 
-
-
+/* Background image with a dark overlay for better text readability */
     background-size: cover;
     background-position: center;
     height: 60vh;
@@ -94,13 +96,13 @@ body {
     color: var(--text-light);
     padding: 0 20px;
 }
-
+/* Hero Heading with responsive font size using clamp() for better readability across devices */
 .hero-content h1 {
     font-size: clamp(2rem, 5vw, 3.5rem);
     /* Responsive font size */
     margin-bottom: 15px;
 }
-
+/* CTA Button in Hero */
 .cta-button {
     display: inline-block;
     padding: 12px 35px;
@@ -111,7 +113,7 @@ body {
     font-weight: bold;
     transition: transform 0.2s ease;
 }
-
+/* Subtle hover effect for the CTA button */
 .cta-button:hover {
     transform: scale(1.05);
     background: var(--secondary-accent);
@@ -125,7 +127,7 @@ body {
     margin: 0 auto;
     padding: 40px 0;
 }
-
+/* Card Grid for sections that use a card layout (e.g., services, products) */
 .card-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -134,7 +136,7 @@ body {
     margin-top: -100px;
     /* Overlap effect */
 }
-
+/* Card styling for all card-based sections (e.g., services, products, blog excerpts) */
 .card {
     background: var(--card-bg);
     padding: 40px 25px;
@@ -143,51 +145,107 @@ body {
     text-align: center;
     transition: translateY 0.3s ease;
 }
-
+/* Subtle lift on hover for cards */
 .card:hover {
     transform: translateY(-5px);
 }
 
+/* FEATURED SECTION */
+.featured-section {
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.section-title {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.featured-card {
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: 0.3s ease;
+}
+
+.featured-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
+
+.featured-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+
+
 /* 6. Footer */
+
 /* UNIVERSAL ONE-LINE FOOTER */
 .footer-inline {
     background: var(--primary-color);
     color: var(--text-light);
     padding: 20px;
     text-align: center;
-
+/* Flexbox for horizontal alignment of brand and social links */
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 15px;
+    /* gap: 0; */
 
     flex-wrap: wrap; /* keeps it from breaking on small screens */
 }
-
+/* Footer Brand Styling */
 .footer-inline .footer-brand {
     font-family: var(--font-family);
     font-size: 1.3rem;
     letter-spacing: 1px;
 }
-
-.footer-inline .footer-divider {
+/* Divider styling */
+.footer-inline > a, .footer-divider {
     color: var(--accent-color);
     font-weight: bold;
-}
-
-.footer-social-inline a {
-    color: var(--accent-color);
     margin: 0 6px;
     text-decoration: none;
     font-weight: 500;
 }
-
-.footer-social-inline a:hover {
+/* Hover effect for footer links */
+.footer-inline > a:hover{
     color: var(--secondary-accent);
+    text-decoration: underline;
 }
+/* Social media icons in the footer styled as circular buttons with hover effects */
+.footer-social-inline img, .footer-social-inline > a:focus {
+    display: inline-block;
+    border: none;
+    gap: 10px;
+    outline: none;
+    box-shadow: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--secondary-accent);
+    margin: 0 8px;
+    text-decoration: none;
+}
+/* Hover effect for social media icons */
+/* .footer-inline span, .footer-inline a:not(.footer-social-inline)
+{
+    margin: 0 8px;
+} */
+
 
 /* BOTANICAL ROW - A whimsical, plant-inspired section divider */
-
 .botanical-row {
     display: flex;
     justify-content: space-between;
@@ -199,7 +257,7 @@ body {
     padding-bottom: 8px;
     margin-bottom: 12px;
 }
-
+/* Decorative botanical text */
 .botanical-text {
     font-family: var(--font-family);
     font-size: 2rem;
@@ -217,13 +275,12 @@ body {
     border-bottom: 1px solid #c9c2a3;
     text-align: center;
 }
-
+/* Keep lists narrow and centered for better readability */
 .content-area ul {
     max-width: 600px;   /* keeps the list narrow */
     margin: 0 auto;     /* centers it */
     padding-left: 1.2rem; /* keeps bullets aligned nicely */
 }
-
 
 /* Section Divider with Moon Phases */
 .content-area::after {
@@ -234,20 +291,20 @@ body {
     margin-top: 20px;
     color: var(--secondary-accent);
 }
-
+/* Remove divider and spacing for last section */
 .content-area:last-of-type {
     border-bottom: none !important;
     padding-bottom: 0;
     margin-bottom: 0;
     /* Remove bottom border and spacing for last section */
 }
-
+/* Remove moon phases for last section */
 .content-area:last-of-type::after {
     content: none;
-    /* Remove moon phases after last section */
 }
 
 /* CONTACT FORM — Botanical & Elegant */
+/* Contact Section Container */
 .contact-section {
     background: var(--card-bg);
     padding: 45px 35px;
@@ -257,7 +314,7 @@ body {
     margin: 4rem auto;
     border: 1px solid #d8d2bd; /* soft dried-herb border */
 }
-
+/* Contact Section Heading */
 .contact-section h2 {
     text-align: center;
     color: var(--primary-color);
@@ -291,7 +348,7 @@ body {
     transition: 0.2s ease;
 }
 
-/* Focus Glow */
+/* Focus effect for inputs and textarea */
 .contact-form input:focus,
 .contact-form textarea:focus {
     outline: none;
@@ -312,13 +369,13 @@ body {
     letter-spacing: 0.5px;
     transition: 0.25s ease;
 }
-
+/* Hover effect for submit button */
 .contact-form .btn:hover {
     background: var(--secondary-accent);
     transform: translateY(-2px);
 }
 
-/* Optional: Add a soft divider above the form */
+/* Decorative Botanical Divider for Contact Section */
 .contact-section::before {
     content: "🌿 ✦ 🌙 ✦ 🌿";
     display: block;
@@ -327,7 +384,6 @@ body {
     color: var(--secondary-accent);
     margin-bottom: 1.5rem;
 }
-
 
 /* Blog List Layout */
 .blog-list {
@@ -345,35 +401,32 @@ body {
     transition: transform 0.25s ease, box-shadow 0.25s ease;
     text-align: left;
 }
-
+/* Hover effect for blog cards */
 .blog-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 12px 28px rgba(0,0,0,0.12);
 }
-
+/* Blog Card Title */
 .blog-card h3 {
     color: var(--primary-color);
     margin-bottom: 10px;
 }
-
+/* Blog Card Excerpt */
 .blog-card p {
     margin-bottom: 15px;
     color: var(--text-main);
 }
-
+/* "Read More" Links */
 .read-more {
     color: var(--accent-color);
     font-weight: bold;
     text-decoration: none;
 }
-
+/* Hover effect for "Read More" links */
 .read-more:hover {
     color: var(--secondary-accent);
     text-decoration: underline;
 }
-
-
-
 
 /* 7. MEDIA QUERIES (The Responsive Magic) */
 
@@ -394,16 +447,16 @@ body {
         /* Stack logo and links */
         gap: 10px;
     }
-
+/* Center nav links on mobile */
     .nav-links li {
         margin: 0 10px;
     }
-
+/* Stack cards in a single column on mobile for better readability */
     .card-grid {
         grid-template-columns: 1fr;
         /* 1 column on small phones */
     }
-
+/* Adjust hero height for smaller screens to prevent excessive scrolling */
     .hero {
         height: 50vh;
     }
