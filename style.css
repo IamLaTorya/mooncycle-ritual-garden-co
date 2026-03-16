@@ -368,21 +368,33 @@ body {
     text-decoration: underline;
 }
 
-/* Social media icons in the footer styled as circular buttons with hover effects */
-.footer-social-inline img,
-.footer-social-inline>a:focus {
-    display: inline-block;
-    border: none;
-    gap: 10px;
-    outline: none;
-    box-shadow: none;
+/* Make the row of icons horizontal */
+.footer-social-inline {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-top: 8px;
+}
+
+/* Style the SVG icons */
+.footer-social-inline svg {
     width: 30px;
     height: 30px;
+    padding: 6px;
     border-radius: 50%;
     background: var(--secondary-accent);
-    margin: 0 8px;
-    text-decoration: none;
+    fill: var(--primary-color); /* makes the icon visible */
+    transition: transform 0.2s ease;
 }
+
+/* Hover effect */
+.footer-social-inline svg:hover {
+    transform: scale(1.1);
+}
+
+
 
 
 
