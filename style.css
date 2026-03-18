@@ -49,17 +49,34 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 5%;
-    position: sticky;
+    position: relative;
+    /*allows absolute positioning inside*/
+    height: 90px;
+    /*lock the navbar height */
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.logo img {
-    height: 60px;
+/*Position the logo without affecting the navbar height*/
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /*forces logo to left*/
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/*Logo size*/
+.logo-img {
+    height: 85px;
     width: auto;
-    display: block;
-    margin: 0 auto;
+    /*removes forced centering*/
+    object-fit: contain;
+
 }
 
 
@@ -68,7 +85,11 @@ body {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-end;
+    /*forces links to right*/
+    align-items: center;
+    flex: 1;
+    /*pushes links to the far right*/
     text-align: center;
 }
 
@@ -141,30 +162,32 @@ body {
     overflow: hidden;
     white-space: nowrap;
     padding: 20px 0;
-    margin: 20px auto 10px auto;/*top | right | bottom | left*/
+    margin: 20px auto 10px auto;
+    /*top | right | bottom | left*/
     border-radius: 12px;
     position: relative;
     /* border: 1px solid #d8d2bd; */
     max-width: 100%;
     box-sizing: border-box;
-    background: linear-gradient(
-        90deg,
-        #f5f1e6 0%,
-        #faf8f3 50%,
-        #f5f1e6 100%
-    );
+    background: linear-gradient(90deg,
+            #f5f1e6 0%,
+            #faf8f3 50%,
+            #f5f1e6 100%);
 }
 
 /* Track that moves */
 .scroll-track {
-    display: inline-flex;   /* prevents wrapping */
-    flex-wrap: nowrap;      /* double‑locks single line */
+    display: inline-flex;
+    /* prevents wrapping */
+    flex-wrap: nowrap;
+    /* double‑locks single line */
     animation: scrollAnim 60s linear infinite;
 }
 
 /* Each moon/herb item */
 .scroll-item {
-    white-space: nowrap;    /* prevents internal wrapping */
+    white-space: nowrap;
+    /* prevents internal wrapping */
     margin: 0 40px;
     font-size: 1.25rem;
     color: var(--primary-color);
@@ -195,8 +218,13 @@ body {
 
 /* Animation */
 @keyframes scrollAnim {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
 }
 
 
@@ -219,12 +247,14 @@ body {
     grid-template-columns: repeat(3, 1fr);
     /* 3 columns on desktop */
     gap: 30px;
-    margin-top: 40px;/* Added margin to prevent overlap with the hero section on smaller screens */
+    margin-top: 40px;
+    /* Added margin to prevent overlap with the hero section on smaller screens */
 }
 
 /* Card styling for all card-based sections (e.g., services, products, blog excerpts) */
 .card {
-    position: relative;/* Needed for positioning the quick view button */
+    position: relative;
+    /* Needed for positioning the quick view button */
     background: var(--card-bg);
     padding: 20px;
     border-radius: 12px;
@@ -232,8 +262,10 @@ body {
     text-align: center;
     transition: translateY 0.3s ease;
     max-width: 300px;
-    margin: 0 auto;/* Center cards within their grid cells */
+    margin: 0 auto;
+    /* Center cards within their grid cells */
 }
+
 .card img {
     width: 100%;
     height: 180px;
@@ -248,10 +280,12 @@ body {
 
 .quick-view-btn {
     position: absolute;
-    bottom: 120px; /* sits over the image*/
+    bottom: 120px;
+    /* sits over the image*/
     left: 50%;
     transform: translateX(-50%);
-    background: var(--primary-color); /* deep herbal green */
+    background: var(--primary-color);
+    /* deep herbal green */
     color: var(--text-light);
     padding: 8px 16px;
     border-radius: 30px;
@@ -260,7 +294,7 @@ body {
     opacity: 0;
     pointer-events: none;
     transition: 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 
@@ -302,7 +336,7 @@ body {
     border-radius: 12px;
     padding: 20px;
     text-align: left;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
 .testimonial-img {
@@ -344,13 +378,16 @@ body {
     flex-wrap: wrap;
     /* keeps it from breaking on small screens */
 }
+
 /*Homepage footer (newsletter) */
 .footer-inline-home {
-    flex-direction: column; /* stack items vertically */
-    justify-content: flex-start; /* not needed, but clean */
+    flex-direction: column;
+    /* stack items vertically */
+    justify-content: flex-start;
+    /* not needed, but clean */
     gap: 8px;
-     /* more breathing room */
-    padding-bottom: 0px; 
+    /* more breathing room */
+    padding-bottom: 0px;
 }
 
 /* Footer Brand Styling */
@@ -393,7 +430,8 @@ body {
     padding: 6px;
     border-radius: 50%;
     background: var(--secondary-accent);
-    fill: var(--primary-color); /* makes the icon visible */
+    fill: var(--primary-color);
+    /* makes the icon visible */
     transition: transform 0.2s ease;
 }
 
@@ -620,13 +658,33 @@ body {
 
 /* Mobile Phones */
 @media (max-width: 600px) {
+    /*STACK the navbar items*/
     .navbar {
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: auto;
+        padding: 1rem 0;
         /* Stack logo and links */
         gap: 10px;
     }
-
+    /*RESET logo positioning so it stops colliding*/
+    .logo {
+        position: static;
+        transform: none;
+        margin-bottom: 10px;
+    }
+    /*Slightly smaller logo for mobile*/
+    .logo img {
+        height: 100px;
+        width: auto;
+    }
     /* Center nav links on mobile */
+    .nav-links {
+        justify-content: center;
+        flex: none;
+        margin-top: 5px;
+    }
     .nav-links li {
         margin: 0 10px;
     }
