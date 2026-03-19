@@ -16,58 +16,83 @@
 </head>
 
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="logo">
-            <img src="assets/images/logo.png" alt="Mooncycle Ritual Garden Co. logo" class="logo-img">
-        </div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="catalog.html" class="active">Catalog</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
+    <header class="header">
+        <!-- Navigation -->
+        <nav class="navBar">
+            <div class="logo">
+                <img src="assets/images/logo.png" alt="Mooncycle Ritual Garden Co. logo" class="logo-img">
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="catalog.html" class="active">Catalog</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
     <!-- Hero Section -->
     <section class="hero">
         <h1>Welcome to the Garden Shop</h1>
         <p>Where herbal wisdom, lunar rhythm, and everyday magic meet.</p>
     </section>
-
+<main class="container">
+        <div class="content-area">
+            <h2>COMING SOON</h2>
+        </div>
     <section class="scroll">
         <div class="scroll-track">
+            <div class="scroll-item">
+                <div class="coming-emoji">👕</div>
+                <p>Shirts</p>
+            </div>
 
-            <div class="scroll-item">🌑 New Moon — 🌱 Dandelion (Intentions & Renewal)</div>
-            <div class="scroll-item">🌒 Waxing Crescent — 🌿 Nettle (Growth & Strength)</div>
-            <div class="scroll-item">🌓 First Quarter — 🍃 Rosemary (Action & Clarity)</div>
-            <div class="scroll-item">🌔 Waxing Gibbous — 🌼 Lavender (Refinement & Calm)</div>
-            <div class="scroll-item">🌕 Full Moon — 🌸 Chamomile (Manifestation & Harmony)</div>
-            <div class="scroll-item">🌖 Waning Gibbous — 🍂 Mugwort (Gratitude & Intuition)</div>
-            <div class="scroll-item">🌗 Last Quarter — 🌾 Sage (Release & Cleansing)</div>
-            <div class="scroll-item">🌘 Waning Crescent — 🌺 Rose (Rest & Softening)</div>
+            <div class="scroll-item">
+                <div class="coming-emoji">📿</div>
+                <p>Jewelry</p>
+            </div>
 
-            <!-- Duplicate for seamless loop -->
-            <div class="scroll-item">🌑 New Moon — 🌱 Dandelion (Intentions & Renewal)</div>
-            <div class="scroll-item">🌒 Waxing Crescent — 🌿 Nettle (Growth & Strength)</div>
-            <div class="scroll-item">🌓 First Quarter — 🍃 Rosemary (Action & Clarity)</div>
-            <div class="scrolli-item">🌔 Waxing Gibbous — 🌼 Lavender (Refinement & Calm)</div>
-            <div class="scroll-item">🌕 Full Moon — 🌸 Chamomile (Manifestation & Harmony)</div>
-            <div class="scroll-item">🌖 Waning Gibbous — 🍂 Mugwort (Gratitude & Intuition)</div>
-            <div class="scroll-item">🌗 Last Quarter — 🌾 Sage (Release & Cleansing)</div>
-            <div class="scroll-item">🌘 Waning Crescent — 🌺 Rose (Rest & Softening)</div>
+            <div class="scroll-item">
+                <div class="coming-emoji">☕</div>
+                <p>Mugs</p>
+            </div>
+
+            <div class="scroll-item">
+                <div class="coming-emoji">👜</div>
+                <p>Tote Bags</p>
+            </div>
+
+            <div class="scroll-item">
+                <div class="coming-emoji">📘</div>
+                <p>Notebooks</p>
+            </div>
+
+            <div class="scroll-item">
+                <div class="coming-emoji">🌙</div>
+                <p>Room Decor</p>
+            </div>
+
+            <div class="scroll-item">
+                <div class="coming-emoji">🎨</div>
+                <p>Art Prints</p>
+            </div>
+
+            <div class="scroll-item">
+                <div class="coming-emoji">📱</div>
+                <p>Digital Downloads</p>
+            </div>
 
         </div>
     </section>
 
-    <main>
         <section class="py-1">
             <div class="container">
                 <div class="row g-4">
                     <!-- 1. New Moon Herbal Blend Card-->
                     <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                         <div class="card h-100">
-                            <img src="assets/images/newmoon.jpg" class="card-img-top" alt="New Moon Herbal Blend">
+                            <img src="assets/images/new-moon-blend.png" class="card-img-top"
+                                alt="New Moon Herbal Blend">
                             <div class="card-body d-flex flex-column">
                                 <h5 class="card-title">New Moon Herbal Blend</h5>
                                 <p class="fw-semibold mb-1">$18.00</p>
@@ -85,7 +110,7 @@
                         <div class="quickview-modal">
                             <a href="#" class="quickview-close">&times;</a>
                             <!--Quick view image-->
-                            <img src="assets/images/newmoon.jpg" alt="New Moon Herbal Blend">
+                            <img src="assets/images/new-moon-blend.png" alt="New Moon Herbal Blend">
                             <!--Quick View Header-->
                             <div class="quickview-content">
                                 <h2>New Moon Herbal Blend</h2>
@@ -111,7 +136,8 @@
                     <!-- 2. Waxing Moon Energy Tea Card-->
                     <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                         <div class="card h-100">
-                            <img src="assets/images/waxingmoon.jpg" class="card-img-top" alt="Waxing Moon Energy Tea">
+                            <img src="assets/images/waxing-moon-tea.png" class="card-img-top"
+                                alt="Waxing Moon Energy Tea">
                             <div class="card-body d-flex flex-column">
                                 <h5 class="card-title">Waxing Moon Energy Tea</h5>
                                 <p class="fw-semibold mb-1">$18.00</p>
@@ -129,7 +155,7 @@
                         <div class="quickview-modal">
                             <a href="#" class="quickview-close">&times;</a>
 
-                            <img src="assets/images/waxingmoon.jpg" alt="Waxing Moon Energy Tea">
+                            <img src="assets/images/waxing-moon-tea.png" alt="Waxing Moon Energy Tea">
 
                             <div class="quickview-content">
                                 <h2>Waxing Moon Energy Tea</h2>
@@ -156,7 +182,7 @@
                     <!-- 3. Full Moon Illumination Blend Card-->
                     <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                         <div class="card h-100">
-                            <img src="assets/images/fullmoon.jpg" class="card-img-top"
+                            <img src="assets/images/full-moon-blend.png" class="card-img-top"
                                 alt="Full Moon Illumination Blend">
                             <div class="card-body d-flex flex-column">
                                 <h5 class="card-title">Full Moon Illumination Blend</h5>
@@ -175,7 +201,7 @@
                         <div class="quickview-modal">
                             <a href="#" class="quickview-close">&times;</a>
 
-                            <img src="assets/images/fullmoon.jpg" alt="Full Moon Illumination Blend">
+                            <img src="assets/images/full-moon-blend.png" alt="Full Moon Illumination Blend">
 
                             <div class="quickview-content">
                                 <h2>Full Moon Illumination Blend</h2>
@@ -801,7 +827,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- 17. DIY Zen Garden Tool Kit -->
+                    <!-- 17. DIY Zen Garden Tool Kit Card-->
                     <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                         <div class="card h-100">
                             <img src="assets/images/zengarden.jpg" class="card-img-top" alt="DIY Zen Garden Tool Kit">
@@ -814,6 +840,38 @@
                                     <i class="bi bi-star"></i>
                                 </div>
                                 <a href="#quickview-zengarden" class="btn btn-outline-dark mt-auto">Quick View</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Diy Zen Garden Tool Kit Modal-->
+                    <div id="quickview-zengarden" class="quickview-overlay">
+                        <div class="quickview-modal">
+                            <a href="#" class="quickview-close">&times;</a>
+
+                            <img src="assets/images/zengarden.jpg" alt="DIY Zen Garden Tool Kit">
+
+                            <div class="quickview-content">
+                                <h2>DIY Zen Garden Tool Kit</h2>
+
+                                <div class="quickview-stars mb-2">
+                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star"></i>
+                                </div>
+
+                                <div class="quickview-price">$30.00</div>
+
+                                <p>
+                                    A tabletop zen garden with sand, stones, and mini rakes—perfect for quiet moments,
+                                    intention‑setting, and mindful
+                                    pauses between rituals. Create calming patterns and reset your energy throughout the
+                                    moon cycle.
+                                </p>
+
+                                <a href="https://www.etsy.com" target="_blank" class="quickview-buy"
+                                    rel="noopener noreferrer">
+                                    Buy Now on Etsy
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -834,6 +892,37 @@
                             </div>
                         </div>
                     </div>
+                    <div id="quickview-incense" class="quickview-overlay">
+                        <div class="quickview-modal">
+                            <a href="#" class="quickview-close">&times;</a>
+
+                            <img src="assets/images/incensekit.jpg" alt="Incense Making Kit">
+
+                            <div class="quickview-content">
+                                <h2>Incense Making Kit</h2>
+
+                                <div class="quickview-stars mb-2">
+                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-half"></i>
+                                </div>
+
+                                <div class="quickview-price">$32.00</div>
+
+                                <p>
+                                    Blend your own incense with herbs, resins, and charcoal—craft smoke offerings for
+                                    cleansing, devotion, and
+                                    moonlit ritual work. Includes tools, ingredients, and a guide for creating your own
+                                    sacred scents.
+                                </p>
+
+                                <a href="https://www.etsy.com" target="_blank" class="quickview-buy"
+                                    rel="noopener noreferrer">
+                                    Buy Now on Etsy
+                                </a>
+                            </div>
+                        </div>
+                    </div>
 
                     <!-- 19. Ritual Altar Box -->
                     <div class="col-12 col-sm-6 col-md-4 col-lg-3">
@@ -851,13 +940,37 @@
                             </div>
                         </div>
                     </div>
+                    <div id="quickview-altarbox" class="quickview-overlay">
+                        <div class="quickview-modal">
+                            <a href="#" class="quickview-close">&times;</a>
 
+                            <img src="assets/images/altarbox.jpg" alt="Ritual Altar Box">
 
+                            <div class="quickview-content">
+                                <h2>Ritual Altar Box</h2>
 
+                                <div class="quickview-stars mb-2">
+                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star"></i>
+                                </div>
 
+                                <div class="quickview-price">$40.00</div>
 
+                                <p>
+                                    A portable altar in a box—complete with cloth, candles, crystals, and jars for
+                                    herbs—so you can build sacred
+                                    space anywhere. Perfect for moon rituals, meditation, and intentional daily
+                                    practice.
+                                </p>
 
-
+                                <a href="https://www.etsy.com" target="_blank" class="quickview-buy"
+                                    rel="noopener noreferrer">
+                                    Buy Now on Etsy
+                                </a>
+                            </div>
+                        </div>
+                    </div>
     </main>
 
     <!-- Footer -->
