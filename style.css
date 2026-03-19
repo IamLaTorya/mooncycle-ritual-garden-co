@@ -105,6 +105,7 @@ body {
     /* Matches navbar height */
     width: 95px;
     /* Square container */
+    margin: 10px
 }
 
 /* Logo image sizing */
@@ -176,7 +177,7 @@ body {
     text-align: center;
     color: var(--text-light);
     /* White text */
-    padding: 120px 20px 0px;
+    padding: 280px 20px 190px;
     /* Extra top padding for fixed navbar */
 }
 
@@ -241,7 +242,7 @@ body {
     /* Keeps items in a single row */
     flex-wrap: nowrap;
     /* Double-locks single-line layout */
-    animation: scrollAnim 60s linear infinite;
+    animation: scrollAnim 90s linear infinite;
     /* Slow continuous scroll */
 }
 
@@ -944,5 +945,6 @@ body {
     /* Shorter hero on mobile */
     .hero {
         height: 50vh;
+        padding: 340px 10px 130px;
     }
 }
