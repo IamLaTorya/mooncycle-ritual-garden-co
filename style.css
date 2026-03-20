@@ -23,7 +23,8 @@
     --text-light: #FFFFFF;
     /* Text on dark backgrounds */
 
-    --font-family: 'Satisfy', 'Cookie', 'Quicksand', cursive;
+    --font-family: "Comic Sans MS", "Comic Sans", cursive, sans-serif;
+    --font-weight: bold;
     --container-width: 1100px;
     /* Max width for centered content */
 }
